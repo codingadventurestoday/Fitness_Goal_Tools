@@ -3,20 +3,55 @@
 2. A calculator that helps determine the break down for each macro nutritient you should consume.
 """
 def goal():
-    goal_path = input('')
-    duration = input('')
-    try: 
-        goal_path = int(goal_path)
-    except: 
-        print('You have not entered a number for what your goal is. Please enter 1-3.')
-        goal()
-        break
-    if goal_path == 1: 
-            
-    elif goal_path == 2:
-    
-    elif goal_path == 3:
+    goal_path_check = True
+    while goal_path_check = True: 
+        goal_path = input('''Please enter the number of what would you like to accomplish: 
+    1. Lose Weight
+    2. Maintance Weight
+    3. Gain Weight''')
+        try: 
+            goal_path = int(goal_path)
+            goal_path_check = False
+        except: 
+            print('You have not entered a number for what your goal is. Please enter 1-3.')
         
+    duration_check = True
+    while duration_check == True:
+        try: 
+            duration = input('How many weeks would your goal in like to accomplish this by?: ')
+            days = int(duration)
+            duration_check = False 
+        except: 
+            print('The amount of weeks needs to be in numerical form')
+
+    if goal_path == 1: 
+        weight_lost_check = True 
+        while weight_lost_check == True:
+            try: 
+                amount_to_lose = input('What is the number of Lbs would you like to lose?: ')
+                lbs_to_lose = int(amount_to_lose)
+                weight_lost_check = False
+            except: 
+                print('The amount you enter must be a number.")
+        deficit = (goal*-3500)/days
+        return deficit
+                      
+    elif goal_path == 2:
+        maintenance_calories = 0
+        return maintenance_claories
+                      
+    elif goal_path == 3:
+        weight_gain_check = True 
+        while weight_gain_check == True:
+            try: 
+                amount_to_gain = input('What is the number of Lbs would you like to lose?: ')
+                lbs_to_gain = int(amount_to_lose)
+                weight_gain_check = False
+            except: 
+                print('The amount you enter must be a number.")
+        surplus = (goal*3500)/days  
+        return surplus
+                      
     else:
         print('The number you entered is not an option. Please enter 1-3 base off of what you would like to accomplish.')
         goal()
@@ -41,7 +76,7 @@ def determine_bmr():
     
 def weight_calculator(): 
     determine_bmr()
-    goal()
+    additional_calories = goal()
     return None 
   
 def macro_calculator():
