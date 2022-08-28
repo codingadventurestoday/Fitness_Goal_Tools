@@ -130,7 +130,7 @@ while current_status == True:
     try: 
         tool_selection = int(tool_selection)
     except: 
-        print('Your entry was not a numerial. Please enter the numerial of the tool you would like to use. Example: 1.')
+        print('Your entry was not a number in numerical form. Please enter the number of the tool you would like to use. Example: 1.')
     try: 
         if tool_selection == 1: 
             weight_calculator()
@@ -141,3 +141,6 @@ while current_status == True:
         elif tool_selection == 3: 
             current_status = False
             break
+                      
+     except: 
+         print('There was a problem selecting a tool. Let\'s try again. \n\n')
