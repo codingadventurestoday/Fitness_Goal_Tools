@@ -54,30 +54,65 @@ def goal():
                       
     else:
         print('The number you entered is not an option. Please enter 1-3 base off of what you would like to accomplish.')
-        goal()
-        break 
+
 
 def determine_bmr(): 
     name = input('What is your name? : ')
     #include a loop and regex to ensure gender is male or female, age, weight, height are numbers
-    gender = input(f'Hey {name}, we are going to need some information to help determine your calorie needs. What is your gender?: ')
-    age = input('Alright, now that we have your gender let\'s get your age. How old are you?: ')
-    weight = input('Next up. How much do you weight in Lbs?: ')
-    height = input('Last part before we give you your baseline caloric needs! How tall are you in inches?: ') 
+    gender_check = True
+    while gender_check == True: 
+        gender = input(f'Hey {name}, we are going to need some information to help determine your calorie needs. What is your gender?: ')
+        male_check = re.search('male', gender.lower())
+        female_check = re.search('female', gender.lower())                      
+        if male_check or female_check != None: 
+            gender_check= False
+        else:
+            continue
+                      
+    age_check = True
+    while age_check == True:
+        try: 
+            age = input('Alright, now that we have your gender let\'s get your age. How old are you?: ')
+            age = int(age)
+            age_check = False 
+         except: 
+             print('Please enter your age in numerical form.')
+             continue
+                      
+    weight_check = True      
+    while weight_check == True:
+        try:
+            weight = input('Next up. How much do you weight in Lbs?: ')
+            weight = int(weight)/2.2          
+            weight_check = False
+        except: 
+            print('Please enter your weight in numerial form.')
+            continue
+                      
+    height_check = True
+    while height_check == True:
+        try:                 
+            height = input('Last part before we give you your baseline caloric needs! How tall are you in inches?: ') 
+            height = int(height)*2.54
+            height_check = False
+        except: 
+            print('Please enter your height in inches in numerical form.')
     
     if gender.lower() == 'female':
         BMR = (10*weight)+(6.25*height)-(5*age)-161
-        
+        return BMR
+                      
     elif gender.lower() == 'male':
         BMR = (10*weight)+(6.25*height)-(5*age)+5
-    
-    goal():
+        return BMR
+
     
     
 def weight_calculator(): 
-    determine_bmr()
+    baseline_calories = determine_bmr()
     additional_calories = goal()
-    return None 
+    total_calories = baseline_calories + total_calories
+    return total_calories 
   
 def macro_calculator():
     return None 
