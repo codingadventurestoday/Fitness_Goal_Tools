@@ -83,7 +83,7 @@ def determine_bmr():
     while weight_check == True:
         try:
             weight = input('Next up. How much do you weight in Lbs?: ')
-            weight = int(weight)/2.2          
+            weight = float(weight)/2.2          
             weight_check = False
         except: 
             print('Please enter your weight in numerial form.')
@@ -93,7 +93,7 @@ def determine_bmr():
     while height_check == True:
         try:                 
             height = input('Last part before we give you your baseline caloric needs! How tall are you in inches?: ') 
-            height = int(height)*2.54
+            height = float(height)*2.54
             height_check = False
         except: 
             print('Please enter your height in inches in numerical form.')
@@ -115,7 +115,38 @@ def weight_calculator():
     return total_calories 
   
 def macro_calculator():
-    return None 
+    macro_needs = {}
+    print('Let\'s determine how much Macro Nutrients you should have each day.')
+    daily_caloric_needs = input('''First we need to know how many Calories you will need each day. Please enter the number: ')
+    check_sum_of_percentages = True
+    while check_sum_of_percentages == True: 
+        print('''Now you need to enter the percentage of your Calories you would like each Macro Nutrient. Please enter each in a decimal form where they all add up to 1. 
+        example: .3'''
+        percent_protein = input('The base recommended ranges for protien is .2-.35. What percentage of protein would you like to have daily?: ')
+        percent_fats = input('The base recommended ranges for fats is .2-.35. What percentage of fats would you like to have daily?: ')
+        percent_carbs = input('The base recommended ranges for carbohydrates is .4-.6. What percentage of carbohydrates would you like to have daily?: ')
+        try: 
+            percent_protein = float(percent_protein)
+            percent_fats = flaot(percent_fats)
+            percent_carbs = float(percent_carbs)
+            total_percentage = percent_protein + percent_fats + percent_carbs
+            if total_percent == 1: 
+                check_sum_of_percentage = False
+            else: 
+                print('The sum of the values you input did not equal 1.')
+        except: 
+            print('Please enter the numerical form for each Macro Nutrient.')
+            
+    amount_of_protein = percent_protien * daily_caloric_needs / 4
+    amount_of_fats = percent_fats * daily_caloric_needs / 9
+    amount_of_carbs = percent_carbs * daily_caloric_needs / 4
+    try: 
+        macro_needs['protien'] = amount_of_protein
+        macro_needs['fats'] = amount_of_fats
+        macro_needs['carbs'] = amount_of_carbs
+    except: 
+        print('We had trouble storing your Macro Needs. Please try again.')
+    return macro_needs
   
   
   
@@ -133,10 +164,14 @@ while current_status == True:
         print('Your entry was not a number in numerical form. Please enter the number of the tool you would like to use. Example: 1.')
     try: 
         if tool_selection == 1: 
-            weight_calculator()
-            
+            calories_needs = weight_calculator()
+            print(f'To achieve your goal you will need {calories_needs} each day. If you find these numbers to challenging consider increasing the time it takes you to reach your goal.')
         elif tool_selection == 2: 
-            macro_calculator()
+            marco_gram_dict = macro_calculator()
+            print(f'''Base off of your preferences each day you should get:
+                     {marco_gram_dict['protien']}grams of protien
+                     {marco_gram_dict['fats']}grams of fats
+                     {marco_gram_dict['carbs']}grams of carbohydrates''')
             
         elif tool_selection == 3: 
             current_status = False
