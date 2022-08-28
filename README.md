@@ -11,23 +11,23 @@ Currently the application offers:  <br>
 ## BUILT WITH 
 Python3.10
 
-## GET STARTED 
-
-### PREREQUISITES 
-
-
-### INSTALLION 
+<!--- ## GET STARTED 
+-->
 
 
-## USAGE 
+<!--- ### PREREQUISITES 
+-->
+
+<!---### INSTALLION 
+-->
+
+<!---## USAGE 
+-->
 
 ## ROADMAP 
 
   - Add a One-Rep Maximun Calculator  <br>
-  - Create a front-end experience with an interactive website  <br>
-  - Complete the Macro Nutrients Calculator  
-  
-
+  - Create a front-end experience with an interactive website  <br> 
 
 ## CONTRIBUTAION 
 
