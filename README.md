@@ -3,6 +3,9 @@
 ## ABOUT THIS PROJECT 
 
 This project helps individuals understand what steps they will need to take in order to reach their fitness goals.  <br>
+Currently the application offers:  <br>
+- A calculator which determine your daily caloric needs for your goal  <br>
+- A calculator which provides you a break down of Macro Nutrients based off of your preference  <br>
 
 
 ## BUILT WITH 
@@ -20,12 +23,16 @@ Python3.10
 
 ## ROADMAP 
 
+  - Add a One-Rep Maximun Calculator  <br>
+  - Create a front-end experience with an interactive website  <br>
+  - Complete the Macro Nutrients Calculator  
+  
 
 
 ## CONTRIBUTAION 
 
 This is a project to foster the growth of my engineering skills. As a result, any contribution is limited to suggestions only.  <br>
-To make suggestions follow here: 
+To make suggestions follow here:  <br>
 - Email myself, Jeremy Phillips, at codingadventurestoday@gmail.com
 
 ## LICENSE 
