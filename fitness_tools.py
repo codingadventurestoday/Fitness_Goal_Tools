@@ -2,6 +2,28 @@
 1. A calculator that helps estimate your calorie needs to reach your weight goals.
 2. A calculator that helps determine the break down for each macro nutritient you should consume.
 """
+
+def one_rep_calculator(): 
+    print('Let\'s estimate your one rep max for an exercise!')
+    try: 
+        weight = input('First we need to know how much weight in Lbs you used for the exercise. Enter in numerical form: ')
+        weight = float(weight)
+    except: 
+        print('You need to enter the weight in numerical form. Example: 235.5')
+    try: 
+        reps = input('Now we need to know how many reps did you get with that weight. Enter in numerical form: ')
+        reps = int(reps)
+    except: 
+        print('You need to enter the reps in numerical form. Example: 12')
+        
+    brycki = 
+    epley = 
+    lombardi = 
+    oconnor = 
+    sum = brycki + epley + lombardi + oconnor
+    average = sum/4
+    return average
+
 def goal():
     goal_path_check = True
     while goal_path_check = True: 
@@ -156,7 +178,8 @@ while current_status == True:
     tool_selection = input('''
     1. Calorie needs for your weight goals.
     2. Breakdown of Macro Nutrients for your diet.
-    3. To EXIT.
+    3. One Rep Max Estimation 
+    4. To EXIT.
     \n\n''')
     try: 
         tool_selection = int(tool_selection)
@@ -174,6 +197,9 @@ while current_status == True:
                      {marco_gram_dict['carbs']}grams of carbohydrates''')
             
         elif tool_selection == 3: 
+            one_rep_calculator()
+        
+        elif tool_selection == 4: 
             current_status = False
             break
                       
