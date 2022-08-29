@@ -7,7 +7,7 @@ def one_rep_calculator():
     print('Let\'s estimate your one rep max for an exercise!')
     try: 
         weight = input('First we need to know how much weight in Lbs you used for the exercise. Enter in numerical form: ')
-        weight = float(weight)
+        weight = float(weight)/2.2
     except: 
         print('You need to enter the weight in numerical form. Example: 235.5')
     try: 
@@ -16,11 +16,10 @@ def one_rep_calculator():
     except: 
         print('You need to enter the reps in numerical form. Example: 12')
         
-    brycki = 
-    epley = 
-    lombardi = 
-    oconnor = 
-    sum = brycki + epley + lombardi + oconnor
+    brycki = weight*(36/(37-reps))
+    epley = weight*(1+(0.0333*reps))
+    oconnor = weight*(1+(0.025*reps))
+    sum = brycki + epley + oconnor
     average = sum/4
     return average
 
@@ -197,8 +196,10 @@ while current_status == True:
                      {marco_gram_dict['carbs']}grams of carbohydrates''')
             
         elif tool_selection == 3: 
-            one_rep_calculator()
-        
+            weight_in_kg = one_rep_calculator()
+            weight_in_lbs = weight_in_kg*2.2
+            print(f'Your estimated one rep max for this excerise is {weight_in_lbs}lbs or {weight_in_kg}Kgs.')
+            
         elif tool_selection == 4: 
             current_status = False
             break
